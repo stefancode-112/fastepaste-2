@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fastpaste</title>
+</head>
+<body>
+    <h1>Fastpaste</h1>
+    <form method="post" action="/paste">
+        <input type="text" name="title" placeholder="Title" required><br>
+        <textarea name="content" rows="10" cols="50" placeholder="Your paste here..." required></textarea><br>
+        <input type="submit" value="Create Paste">
+    </form>
+
+    {% if paste_id %}
+        <h2>Paste Created</h2>
+        <p><strong>Title:</strong> {{ title }}</p>
+        <pre>{{ content }}</pre>
+        <p>URL: /paste/{{ paste_id }}</p>
+    {% endif %}
+</body>
+</html>
